@@ -5,5 +5,5 @@ Master's Thesis project in Aerospace Engineering at Delft University of Technolo
 Main repository is available on the TU Delft GitLab page: https://gitlab.tudelft.nl/delfispace
 A copy of this repository might be added on this GitHub page.
 
-The MSc thesis report can be found on: http://repository.tudelft.nl/
+The MSc thesis report can be found on: https://repository.tudelft.nl/record/uuid:74339e69-0fdb-4ce9-96d1-a909e729fb96
 under the name: "Modular Thermal Analysis for CubeSats and PocketQubes"
