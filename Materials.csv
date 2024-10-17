@@ -1,0 +1,64 @@
+"DO NOT CHANGE CELLS WITH ""BEGIN-MATERIALS"", ""END-MATERIALS"" ETC BECAUSE THEY ARE REFERENCE POINTS FOR THE PYTHON CODE",,,,,,,,,,,,,
+,,,,,,,,,,,,,
+REFERENCES (some values are averaged from multiple references),,,,,,,,,,,,,
+1,MatWeb,bulk properties,https://www.matweb.com/,,,,,,,,,,
+2,Gilmore Thermal Control Handbook,optical properties,https://arc.aiaa.org/doi/book/10.2514/4.989117,,,,,,,,,,
+3,Transmetra,IR emissivities,https://www.transmetra.ch/images/transmetra_pdf/publikationen_literatur/pyrometrie-thermografie/emissivity_table.pdf,,,,,,,,,,
+4,EngineeringToolbox,solar absorptivities,https://www.engineeringtoolbox.com/solar-radiation-absorbed-materials-d_1568.html,,,,,,,,,,
+5,NASA,coatings,https://ntrs.nasa.gov/api/citations/19840015630/downloads/19840015630.pdf,,,,,,,,,,
+6,solarmirror,absorptivity & emissivity,http://www.solarmirror.com/fom/fom-serve/cache/43.html,,,,,,,,,,
+7,FR4 wikipedia (note: PCB is not ONLY made from FR4),bulk properties,https://en.wikipedia.org/wiki/FR-4,,,,,,,,,,
+8,FR4 NWES,specific heat capacity,https://www.nwengineeringllc.com/article/fr4-thermal-properties-to-consider-during-design.php,,,,,,,,,,
+9,FR4 electronics cooling,emissivity,"https://www.electronics-cooling.com/2003/08/e-missivity-in-ppractical-temperature-measurements/#:~:text=A%20typical%20value%20for%20epoxies,values%20around%200.8%20%5B2%5D.",,,,,,,,,,
+10,Boxtel thesis,solar cells,https://repository.tudelft.nl/islandora/object/uuid:a77149c9-4fd0-4cdc-ade9-6c5aca719a64,,,,,,,,,,
+11,AzurSpace,solar cells,https://www.azurspace.com/images/products/0003401-01-01_DB_3G30A.pdf,,,,,,,,,,
+12,euspen,heat transfer coefficient metal-metal,https://www.euspen.eu/knowledge-base/TI22101.pdf,,,,,,,,,,
+13,oak ridge national laboratory,heat transfer coefficient conductive filler,https://info.ornl.gov/sites/publications/Files/Pub182085.pdf,,,,,,,,,,
+14,ThermalEngineer,MLI,https://www.thermalengineer.com/library/effective_emittance.htm,,,,,,,,,,
+15,OBEM2013,MLI,https://abcm.org.br/app/webroot/anais/cobem/2013/PDF/1126.pdf,,,,,,,,,,
+16,IOP CONF,PCB optical properties,https://iopscience.iop.org/article/10.1088/1757-899X/734/1/012027/pdf,,,,,,,,,,
+17,politecnico di torino,PCB green&blue,https://webthesis.biblio.polito.it/27931/1/tesi.pdf,,,,,,,,,,
+18,T. ruhl,PCB cond.,https://repository.tudelft.nl/record/uuid:0fb7e9cc-7b3e-4a70-9c8b-b94577117015,,,,,,,,,,
+,,,,,,,,,,,,,
+name (no spaces),density [kg/m^3],ref,Specific heat capacity [J/(kg.K)],ref,Solar absorptivity [-],ref,IR emissivity [-],ref,"Thermal conductivity ""k"" [W/(m.K)]",ref,Heat transfer coefficient [W/(m^2.K)],ref,notes
+,,,,,,,,,,,,,
+MATERIALS-BEGIN,,,,,,,,,,,,,
+al2024,2780,1,875,1,,,,,121,1,,,
+al5052,2680,1,880,1,,,,,138,1,,,
+al6061,2700,1,896,1,,,,,167,1,,,
+al7075,2810,1,960,1,,,,,130,1,,,
+stainless_steel,8000,1,500,1,,,,,18.5,1,,,
+copper,8930,1,385,1,,,,,400,1,,,
+PCB,1850,7,1100,8,,,,,30,18,,,"PCBs are not only made from FR4, but also copper, so this value combines both. Conductivity value is in parallel direction."
+solar_cells,4200,11,493,10,,,,,56.7,10,,,"Mass of solar cells may be ignored for convenience, and it is only applied as an optical coating. density was calculated backwards from the data sheet"
+MATERIALS-END,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+OPTICAL-BEGIN,,,,,,,,,,,,,
+black_paint,,,,,0.95,"2, 5",0.85,"2, 5",,,,,
+white_paint,,,,,0.25,"2, 5",0.9,"2, 5",,,,,
+MLI,,,,,0.005,15,0.05,14,,,,,"less effective on small surfaces. Values from OBEM paper are a larger surface, so the numbers were taken conservatively"
+al_unpolished,,,,,0.15,2,0.09,3,,,,,
+al_polished,,,,,0.15,2,0.05,"2, 3, 6",,,,,
+al_anodised,,,,,0.14,6,0.7,"3, 6",,,,,0.7 is average between sources 3 and 6
+steel_unpolished,,,,,0.47,2,0.14,2,,,,,
+steel_polished,,,,,0.42,2,0.11,2,,,,,
+copper,,,,,0.3,2,0.03,"2, 3",,,,,
+PCB_white,,,,,0.21,16,0.96,16,,,,,
+PCB_black,,,,,0.94,16,0.97,16,,,,,
+PCB_red,,,,,0.51,16,0.88,16,,,,,
+PCB_green,,,,,0.88,17,0.7,17,,,,,sources 16 and 17 vary quite a lot
+PCB_blue,,,,,0.89,17,0.9,17,,,,,
+solar_cell,,,,,0.66,10,0.89,10,,,,,"absorptivity is effective (see Boxtel thesis), including the efficiency converting it to electrical energy. Absolute absorptivity is 0.91"
+solar_cell_mix_black_paint,,,,,0.75,"2, 5, 10",0.88,10,,,,,a surface having mostly solar cells (67%) but also some black paint (33%)
+OPTICAL-END,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+CONTACT-BEGIN,,,,,,,,,,,,,
+graphite,,,,,,,,,,,50000,13,highly dependent on applied pressure
+al_al,,,,,,,,,,,2000,12,highly dependent on applied pressure. This value is on the low end (e.g. PCB spacers)
+steel_steel,,,,,,,,,,,1000,12,highly dependent on applied pressure. This value is on the low end (e.g. PCB spacers)
+al_steel,,,,,,,,,,,1000,12,highly dependent on applied pressure. This value is on the low end (e.g. PCB spacers)
+PCB_PCB_perpendicular,,,,,,,,,,,188,7,"""equivalent"" heat transfer coefficient calculated from conductivity: h_eff = k/L = 0.3/0.0016"
+CONTACT-END,,,,,,,,,,,,,
