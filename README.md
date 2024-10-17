@@ -1,4 +1,4 @@
-# Thermal Analysis - Overview
+# Thermal Analysis
 Modular Thermal Analysis Software - MSc Thesis
 
 Master's Thesis project in Aerospace Engineering at Delft University of Technology (TU Delft).
