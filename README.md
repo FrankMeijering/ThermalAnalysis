@@ -23,4 +23,4 @@ under the name: "Modular Thermal Analysis for CubeSats and PocketQubes"
 ## Overview of folders
 - ESATAN: folder use to store thermal simulations made with ESATAN-TMS. Only used for verification purposes.
 - FUNcubeData: folder with FUNcube-1 flight data. Only used for validation purposes.
-- SensitivityAnalysis: folder which is used as a default to store results from any sensitivity analyses performed. The stored files are Python Pickle files, and contain NodalModel objects that have been solved, i.e., that contain simulation results.
+- SensitivityAnalysis: folder which is used as a default to store results from any sensitivity analyses performed. The stored files are Python Pickle files, and contain NodalModel objects that have been solved, i.e., that contain simulation results. For the FUNcube-1 sensitivities, an example is given for the absorptivity 'ABS'. The other sensitivities can be created with SensitivityAnalysis.py, by running the examples at the bottom of the code.
