@@ -8,6 +8,8 @@ A copy of this repository is added on this GitHub page, but might not be kept as
 The MSc thesis report can be found on: https://resolver.tudelft.nl/uuid:74339e69-0fdb-4ce9-96d1-a909e729fb96
 under the name: "Modular Thermal Analysis for CubeSats and PocketQubes"
 
+It is recommended to get started with this YouTube tutorial: https://youtu.be/fc52rccMm14
+
 ## Overview of files
 - ThermalBudget.py: contains the definition of the Node, NodalModel, and OrbitalModel classes. It is important to understand how to use them, and the documentation present in those class definitions helps a lot with input syntax and troubleshooting.
 - CommonNodalModels.py: contains some functions to easily define PCBs with multiple nodes. It is recommended to expand this file by adding more and more NodalModels that are frequently reused.
